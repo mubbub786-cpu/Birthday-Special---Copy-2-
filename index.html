@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Saniya ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Poppins:wght@600&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body { background:#000; color:#fff; overflow:hidden; width:100vw; height:100vh; }
+
+.page { display:none; height:100vh; width:100vw; background:#000; flex-direction:column; }
+#page0 { display:flex; }
+
+/* INSTA HEADER */
+.header { display:flex; align-items:center; padding:10px 12px; border-bottom:1px solid #262626; background:#000; height:60px; z-index:10; }
+.header img { width:28px; height:28px; border-radius:50%; margin-right:10px; border:2px solid #ff4da6; object-fit:cover; background:#333; cursor:pointer; }
+.name { font-weight:600; font-size:15px; }
+.active { font-size:11px; color:#a8a8a8; display:flex; align-items:center; }
+.green-dot { width:6px; height:6px; background:#4ade80; border-radius:50%; margin-right:5px; }
+
+/* CHAT - ACCHA BUBBLE */
+.chat { flex:1; overflow-y:auto; padding:15px 12px; display:flex; flex-direction:column; background:linear-gradient(to bottom, #000, #111); }
+.msg { position:relative; background:linear-gradient(135deg, #2d2d2d, #444); padding:12px 16px; border-radius:20px; margin-bottom:12px; max-width:82%; align-self:flex-start; font-size:14px; line-height:1.5; animation:pop 0.4s; box-shadow:0 3px 10px rgba(0,0,0,0.4); }
+.msg:after { content:''; position:absolute; left:-10px; bottom:10px; width:0; height:0; border-top:8px solid transparent; border-right:12px solid #2d2d2d; border-bottom:8px solid transparent; } /* TAIL */
+@keyframes pop { from{opacity:0; transform:scale(0.8);} to{opacity:1; transform:scale(1);} }
+
+.big-btn { padding:18px 50px; font-size:22px; background:linear-gradient(45deg,#0095f6,#ff4da6); color:white; border:none; border-radius:30px; cursor:pointer; font-weight:700; margin:20px auto; display:none; box-shadow:0 0 35px #ff4da6; animation:pulse 1.2s infinite; }
+@keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.08);} }
+
+/* PAGE 1 - AUR BHI GRAND */
+.grand-bg { background:radial-gradient(circle at 50% 30%, #ff0080, #8000ff, #000); justify-content:center; align-items:center; position:relative; overflow:hidden; }
+.grand-title { font-family:'Dancing Script', cursive; font-size:52px; text-align:center; text-shadow:0 0 30px #fff, 0 0 60px #ff0080; animation:glow 1.5s ease-in-out infinite; }
+@keyframes glow { 0%,100%{transform:scale(1) rotate(-1deg);} 50%{transform:scale(1.15) rotate(1deg);} }
+.grand-sub { font-size:22px; margin:15px 0; }
+.sparkle { position:absolute; width:5px; height:5px; background:white; border-radius:50%; animation:sparkle 2s infinite; box-shadow:0 0 10px #fff; }
+@keyframes sparkle { 0%,100%{opacity:0;} 50%{opacity:1; transform:scale(2.5);} }
+
+/* BALLOON */
+.balloon { position:absolute; width:45px; height:55px; border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; animation:float 5s ease-in infinite; }
+.balloon:after { content:''; position:absolute; width:2px; height:120px; background:rgba(255,255,255,0.5); left:50%; }
+@keyframes float { 0%{transform:translateY(100vh);} 100%{transform:translateY(-120vh);} }
+
+/* PICS */
+.memory { display:none; }
+.msg-pic { background:#262626; padding:12px; border-radius:18px; margin:0 auto 15px; max-width:95%; box-shadow:0 4px 15px rgba(255,0,102,0.2); }
+.msg-pic img { width:100%; height:60vh; object-fit:cover; border-radius:12px; margin-bottom:8px; background:#333; }
+.msg-pic p { font-size:15px; line-height:1.6; text-align:center; }
+
+/* LOVE LETTER */
+.love-letter { background:linear-gradient(135deg,#ff0066,#6600ff); padding:25px; border-radius:20px; max-width:95%; margin:15px auto; line-height:1.9; font-size:16px; text-align:left; box-shadow:0 0 40px rgba(255,0,102,0.6); }
+
+/* LAST PAGE - SABSE GRAND */
+.final-bg { justify-content:center; align-items:center; background:linear-gradient(45deg,#ff0080,#000,#8000ff,#ff0080); background-size:500% 500%; animation:gradient 3s ease infinite; position:relative; overflow:hidden; }
+@keyframes gradient { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+.final-text { font-family:'Great Vibes', cursive; font-size:48px; text-align:center; color:#ff4da6; text-shadow:0 0 25px #ff4da6, 0 0 50px #ff0080; animation:heartbeat 0.7s infinite; line-height:1.4; }
+@keyframes heartbeat { 0%,100%{transform:scale(1);} 50%{transform:scale(1.3);} }
+.doll { font-size:65px; position:absolute; animation:spin 3s linear infinite; filter:drop-shadow(0 0 15px #ff4da6); }
+@keyframes spin { from{transform:rotate(0deg) scale(1);} to{transform:rotate(360deg) scale(1.2);} }
+
+.btn { background:linear-gradient(45deg,#0095f6,#ff4da6); color:white; border:none; padding:12px 22px; border-radius:10px; font-weight:600; font-size:14px; cursor:pointer; margin:8px; }
+.btns { display:flex; justify-content:space-between; padding:10px 12px; border-top:1px solid #262626; }
+.btn:disabled { background:#00376b; opacity:0.5; }
+canvas { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:5; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 0 -->
+<div id="page0" class="page">
+  <div class="header">
+    <img src="pic1.jpg" onerror="this.src=''" onclick="goToPage(1)"> <!-- DP CLICK = PAGE 1 -->
+    <div>
+      <div class="name">7 minutes</div>
+      <div class="active"><span class="green-dot"></span>Active now</div>
+    </div>
+  </div>
+  <div class="chat" id="chatBox"></div>
+  <button class="big-btn" id="openBtn">Open</button>
+</div>
+
+<!-- PAGE 1 - AUR GRAND -->
+<div id="page1" class="page grand-bg">
+  <div class="balloon" style="left:10%; background:#ff4da6; animation-delay:0s;"></div>
+  <div class="balloon" style="left:20%; background:#40e0d0; animation-delay:0.5s;"></div>
+  <div class="balloon" style="left:35%; background:#ff8c00; animation-delay:1s;"></div>
+  <div class="balloon" style="left:50%; background:#ff4da6; animation-delay:1.5s;"></div>
+  <div class="balloon" style="left:65%; background:#40e0d0; animation-delay:2s;"></div>
+  <div class="balloon" style="left:80%; background:#ff8c00; animation-delay:2.5s;"></div>
+  <div class="balloon" style="left:90%; background:#ff4da6; animation-delay:3s;"></div>
+
+  <div class="sparkle" style="top:15%; left:15%; animation-delay:0s;"></div>
+  <div class="sparkle" style="top:25%; left:85%; animation-delay:0.5s;"></div>
+  <div class="sparkle" style="top:60%; left:10%; animation-delay:1s;"></div>
+  <div class="sparkle" style="top:70%; left:90%; animation-delay:1.5s;"></div>
+
+  <h1 class="grand-title">Happy Birthday<br>Saniya 🎂👑</h1>
+  <p class="grand-sub">4 August 2026 ❤️</p>
+  <p style="font-size:17px; margin-bottom:30px; text-align:center;">Aaj meri duniya me sabse khoobsurat din hai</p>
+  <button class="btn" onclick="goToPage(2)">Continue</button>
+</div>
+
+<!-- PAGE 2 - 10 PICS -->
+<div id="page2" class="page">
+  <div class="header">
+    <img src="pic1.jpg" onerror="this.src=''" onclick="goToPage(1)">
+    <div>
+      <div class="name">7 minutes</div>
+      <div class="active"><span class="green-dot"></span>Active now</div>
+    </div>
+  </div>
+  <div class="chat" id="chatBox2">
+    <div class="memory"><div class="msg-pic"><img src="pic1.jpg" onerror="this.style.display='none'"><p>Tu sabse cute hai meri jaan ❤️<br>Teri ek smile se mera din ban jata hai</p></div></div>
+    <div class="memory"><div class="msg-pic"><img src="pic2.jpg" onerror="this.style.display='none'"><p>Tere bina ek pal bhi nahi reh sakta<br>I love you so much baby</p></div></div>
+    <div class="memory"><div class="msg-pic"><img src="pic3.jpg" onerror="this.style.display='none'"><p>Tu meri duniya hai meri zindagi<br>Happy Birthday meri queen 👑</p></div></div>
+    <div class="memory"><div class="msg-pic"><img src="pic4.jpg" onerror="this.style.display='none'"><p>Teri aankhein sabse pyaari hain<br>Unme mai apna future dekhta hu</p></div></div>
+    <div class="memory"><div class="msg-pic"><img src="pic5.jpg" onerror="this.style.display='none'"><p>Har din tujhse naya pyaar hota hai<br>Thank you mere saath rehne ke liye</p></div></div>
+    <div class="memory"><div class="msg-pic"><img src="pic6.jpg" onerror="this.style.display='none'"><p>Tu jahan bhi rahe khush rahe<br>Bas mere saath rahe hamesha</p></div></div>
+    <div class="memory"><div class="msg-pic"><img src="pic7.jpg" onerror="this.style.display='none'"><p>Tere jaisi koi nahi is duniya me<br>You are my everything</p></div></div>
+    <div class="memory"><div class="msg-pic"><img src="pic8.jpg" onerror="this.style.display='none'"><p>Birthday girl sabse beautiful lagti hai<br>I am so lucky to have you</p></div></div>
+    <div class="memory"><div class="msg-pic"><img src="pic9.jpg" onerror="this.style.display='none'"><p>Chahe jo bhi ho jaaye<br>Mai tujhe kabhi nahi chhodunga</p></div></div>
+    <div class="memory"><div class="msg-pic"><img src="pic10.jpg" onerror="this.style.display='none'"><p>Last pic but sabse special<br>Love you forever Saniya ❤️</p></div></div>
+  </div>
+  <div class="btns">
+    <button class="btn" id="prevBtn" onclick="prevMemory()">Previous</button>
+    <button class="btn" id="nextBtn" onclick="nextMemory()">Next</button>
+    <button class="btn" onclick="goToPage(3)">Continue</button>
+  </div>
+</div>
+
+<!-- PAGE 3 - LOVE LETTER -->
+<div id="page3" class="page" style="justify-content:center; align-items:center;">
+  <h1>For You My Love ❤️</h1>
+  <div class="love-letter">
+    Meri Jaan Saniya,<br><br>
+    Aaj 4 August 2026 hai. Aaj ke din allah ne mujhe sabse anmol tohfa diya tha - TUMHE ❤️<br>
+    Tum meri zindagi ki sabse khoobsurat kahani ho. Tumhare bina mai kuch bhi nahi.<br>
+    Tumhari har baat, har zidd, har smile mujhe tumse aur zyada pyaar karwa deti hai.<br>
+    Promise karta hu hamesha tumhara haath thaam ke rakhunga. Kabhi akela nahi chhodunga.<br>
+    Tum meri girlfriend nahi, meri zindagi ho. Meri saans ho.<br><br>
+    I Love You So Much Saniya ❤️<br>
+    - Tumhara 7 minute
+  </div>
+  <button class="btn" onclick="goToPage(4)">Continue</button>
+</div>
+
+<!-- PAGE 4 - FINAL GRAND -->
+<div id="page4" class="page final-bg">
+  <div class="doll" style="top:8%; left:8%; animation-delay:0s;">🧸</div>
+  <div class="doll" style="top:8%; right:8%; animation-delay:0.5s;">🎀</div>
+  <div class="doll" style="bottom:8%; left:8%; animation-delay:1s;">💖</div>
+  <div class="doll" style="bottom:8%; right:8%; animation-delay:1.5s;">🎈</div>
+
+  <h1 class="final-text">I Love You<br>Hamesha Ke Liye ❤️</h1>
+  <p style="margin:20px 0; font-size:18px;">Forever and Always</p>
+  <button class="btn" onclick="location.reload()">Replay</button>
+</div>
+
+<canvas id="fireworks"></canvas>
+<audio id="bg-music" loop><source src="birthday.mp3" type="audio/mpeg"></audio>
+<script src="script.js"></script>
+</body>
+</html>
